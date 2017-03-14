@@ -11,7 +11,7 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 
-class ZhSpider(CrawlSpider):
+class YellowPage_Spider(CrawlSpider):
     name = 'yp_spider'
     start_urls = ['http://b2b.huangye88.com/qiye/']
 
@@ -61,7 +61,7 @@ class ZhSpider(CrawlSpider):
         n = selector.xpath('//div[@class="box"]/div[1]/span/em')[0].text
         n = int(math.ceil(float(n)/20))
         for i in xrange(0, n):
-            url = basic_url + str(n)
+            url = basic_url + str(i)
             requests = scrapy.Request(url, callback=self.parse_page)
             yield requests
 
@@ -70,4 +70,4 @@ class ZhSpider(CrawlSpider):
         item = YellowPageItem()
         name = selector.xpath('//form[@id="jubao"]/dl/dt/h4/a')
         item['name'] = name
-        yield item
+        return item

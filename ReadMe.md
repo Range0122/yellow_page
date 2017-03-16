@@ -14,3 +14,6 @@
 * `ProxyMiddleware`:从 *proxy_list* 中随机选取 *proxy*，修改IP地址，防止被ban
 
 另外就是修改了`settings.py`中的一些设置，比如*DOWNLOAD_DELAY* 和 *COOKIES_ENABLED* 进一步防止被ban
+
+##17.3.16更新
+修正了user_agent_list中的一些标点错误。数据爬取完成，总计 `226k` 个企业名称。

@@ -8,16 +8,16 @@ import codecs
 
 
 class YellowPagePipeline(object):
-    def __init__(self):
-        self.file = codecs.open('name_list.txt', 'a', encoding='utf-8')
-        # self.file = codecs.open('url_list.txt', 'a', encoding='utf-8')
-        self.file.truncate()
-        self.file.close()
+    # def __init__(self):
+    #     self.file = codecs.open('name_list.txt', 'a', encoding='utf-8')
+    #     # self.file = codecs.open('url_list.txt', 'a', encoding='utf-8')
+    #     self.file.truncate()
+    #     self.file.close()
 
     def process_item(self, item, spider):
-        with codecs.open('name_list.txt', 'a', encoding='utf-8') as f:
-            for name in item['name']:
-                f.write(str(name.text) + '\r')
-        # with codecs.open('url_list.txt', 'a', encoding='utf-8') as f:
-        #     f.write(item['url'] + '\r')
-        return item
+        # with codecs.open('name_list.txt', 'a', encoding='utf-8') as f:
+        #     for name in item['name']:
+        #         f.write(str(name.text) + '\r')
+        with codecs.open('url_list.txt', 'a', encoding='utf-8') as f:
+            for url in item['url']:
+                f.write(url + '\r')

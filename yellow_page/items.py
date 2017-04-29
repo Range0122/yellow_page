@@ -10,5 +10,5 @@ import scrapy
 
 class YellowPageItem(scrapy.Item):
     name = scrapy.Field()
-    # url = scrapy.Field()
+    url = scrapy.Field()
     pass
